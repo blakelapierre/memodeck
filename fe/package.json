@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"scripts": {
-		"start": "wmr",
+		"start": "wmr --http2",
 		"build": "wmr build --prerender",
 		"serve": "wmr serve"
 	},
