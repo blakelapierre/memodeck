@@ -1,0 +1,25 @@
+{
+  "name": "memo-cash-parser-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakelapierre/memo-cash-parser-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blakelapierre/memo-cash-parser-server/issues"
+  },
+  "homepage": "https://github.com/blakelapierre/memo-cash-parser-server#readme",
+  "dependencies": {
+    "jsdom": "^21.1.0",
+    "node-fetch": "^3.3.0",
+    "parse5": "^7.1.2",
+    "ws": "^8.12.1"
+  }
+}
