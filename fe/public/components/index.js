@@ -1,5 +1,10 @@
-export default function Message({author, message}) {
+import styles from './style.module.css';
+
+export default function Message({author, name, message}) {
 	return (
-		<post>{author} {message}</post>
+		<post class={styles.post}>
+			<span>{author || name.text}</span>
+			<div>{message}</div>
+		</post>
 	);
 }

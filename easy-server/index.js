@@ -1,6 +1,23 @@
+var ws = require('ws');
+var WebSocketServer = ws.WebSocketServer;
+
+const wss = new WebSocketServer({ port: 8081 });
+
+wss.on('connection', function connection(ws) {
+  ws.on('error', console.error);
+
+  ws.on('message', function message(data) {
+    console.log('received: %s', data);
+  });
+
+  ws.send('something');
+  ws.send(JSON.stringify(allPosts));
+});
+
 var {JSDOM} = require('jsdom');
 
 var postMap = {};
+var allPosts = [];
 
 scrapeForNewPosts();
 
@@ -11,6 +28,7 @@ function scrapeForNewPosts() {
 			posts.forEach(function (post) {
 				if (postMap[post.tx] === undefined) {
 					newPosts.push(post);
+					allPosts.push(post);
 					postMap[post.tx] = post;
 				}
 			});
@@ -18,6 +36,13 @@ function scrapeForNewPosts() {
 			if (newPosts.length > 0) {
 				setTimeout(scrapeForNewPosts, 15 * 1000);
 				console.log('will check for new posts in 15 seconds');
+
+				var message = JSON.stringify(newPosts);
+				wss.clients.forEach(function each(client) {
+			      if (client.readyState === ws.OPEN) {
+			        client.send(message);
+			      }
+			    });
 			}
 			else {
 				setTimeout(scrapeForNewPosts, 60 * 1000);
@@ -76,3 +101,6 @@ function getNewPosts() {
 //schedule new fetch
 //send to websockets
 //write to file
+
+
+//import { WebSocketServer } from 'ws';
