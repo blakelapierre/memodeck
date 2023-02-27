@@ -14,7 +14,7 @@ export default class Home extends Component {
 	ref = createRef();
 
 	componentDidMount() {
-		const ws = new WebSocket('ws://localhost:8081');
+		const ws = new WebSocket('ws://' + window.location.hostname + ':8081');
 
 		ws.addEventListener('message', event => {
 			console.log('ws event', event);
