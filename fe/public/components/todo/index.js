@@ -16,7 +16,7 @@ const ToDo = ({ query }) => (
 			.
 			TODO:
 
-			* Allow adding columns for: users, search terms, etc.
+			* Allow adding columns for: users, search terms, word cloud/index, etc.
 			* Host on public internet (need HTTP/S and WS/S hosting)
 			* Buttons/links for replying
 			* Show tips/likes
