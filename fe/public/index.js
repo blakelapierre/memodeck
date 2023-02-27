@@ -1,5 +1,6 @@
 import { LocationProvider, Router, Route, lazy, ErrorBoundary, hydrate, prerender as ssr } from 'preact-iso';
 import Home from './pages/home/index.js';
+import ToDo from './components/todo/index.js'
 import NotFound from './pages/_404.js';
 import Header from './header.js';
 
@@ -13,6 +14,7 @@ export function App() {
 				<ErrorBoundary>
 					<Router>
 						<Route path="/" component={Home} />
+						<Route path="/todo" component={ToDo} />
 						<Route path="/about" component={About} />
 						<Route default component={NotFound} />
 					</Router>

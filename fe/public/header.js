@@ -6,6 +6,7 @@ export default function Header() {
 		<header>
 			<nav>
 				<a href="/">Home</a>
+				<a href="/todo">To do</a>
 			</nav>
 			<label>
 				URL:
