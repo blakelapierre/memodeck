@@ -1,10 +1,10 @@
 import styles from './style.module.css';
-import { useState, useCallback } from 'preact/hooks';
 import { Component, createRef } from 'preact';
 
 import Data from '../../test_data/data.js';
 
 import MessageColumn from '../../components/message-column';
+import SearchColumn from '../../components/search-column';
 
 export default class Home extends Component {
 	state = {
@@ -31,7 +31,8 @@ export default class Home extends Component {
 		return (
 			<>
 				<section class={styles.home}>
-				    <MessageColumn messages={posts}/>
+				    <MessageColumn messages={posts} />
+				    <SearchColumn messages={posts} />
 				</section>
 			</>
 		);
