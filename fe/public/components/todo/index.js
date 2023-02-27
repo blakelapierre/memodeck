@@ -20,7 +20,7 @@ const ToDo = ({ query }) => (
 			* Host on public internet (need HTTP/S and WS/S hosting)
 			* Buttons/links for replying
 			* Show tips/likes
-			* Write posts to file(s)
+			* <s>Write posts to file(s)</s>read posts from file
 		</pre>
 	</section>
 );
