@@ -1,6 +1,6 @@
 import styles from './style.module.css';
 
-import Message from '../../components';
+import Message from '../../components/message';
 
 export default function MessageColumn({messages}) {
 	return (
