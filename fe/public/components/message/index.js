@@ -5,7 +5,6 @@ export default function Message({author, name, message, likes, tips}) {
 		<post class={styles.post}>
 			<span>{author || name.text}</span>
 			<div>{message}</div>
-			<div>{likes} likes {tips} tips</div>
 		</post>
 	);
 }

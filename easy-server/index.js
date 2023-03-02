@@ -31,7 +31,7 @@ fs.open('posts', 'r', (error, fd) => {
 		}
 
 		fs.open('posts', 'a', (error, fd) => {
-			if (error) return console.log('error opening posts file', error);
+			if (error) console.log('error opening posts file', error);
 
 			start(fd);
 		});
